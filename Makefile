@@ -32,7 +32,7 @@ lint-local:
 	${LINTER} run ./...
 
 .PHONY: lint
-lint:
+lint: .docker
 	${DOCKER_RUNTIME_CMD} lint-local
 
 .PHONY: build-local
