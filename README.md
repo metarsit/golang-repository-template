@@ -11,6 +11,32 @@ However, it does not include any search and replace script and you will have to 
 1. Commit the changes
 
 ## Pre-requisite
+- bazel
 - docker
-- make
 - go
+- make
+
+## Helpers
+
+### Make
+```bash
+# Run in docker
+$ make build        # Build in docker
+$ make lint         # Run linter in docker
+$ make test         # Run test in docker
+
+# Run on host
+$ make build-local  # Build natively
+$ make lint-local   # Run linter locally
+$ make test-local   # Run test locally
+```
+
+### Bazel
+```bash
+$ bazel build //...       # Build all targets
+$ bazel test //...        # Run all tests
+$ bazel query //...       # Show all known targets
+$ bazel run //:gazelle    # Automatically generate BUILD.bazel
+
+$ bazel run //:gazelle -- update-repos -from_file=go.mod # Automatcially update with go.mod
+```
