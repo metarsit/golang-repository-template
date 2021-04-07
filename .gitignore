@@ -22,3 +22,6 @@ coverage.html
 
 # Built binary from /cmd
 bin/
+
+# Bazel
+/bazel-*
